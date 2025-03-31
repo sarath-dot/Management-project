@@ -1,0 +1,31 @@
+<h3 mat-dialog-title>{{data.isEdit ? 'Edit Project' :'Add Project'}}</h3>
+<mat-dialog-content>
+    <div *ngIf="!data.isDelete" class="d-flex flex-column mb-2">
+        <form [formGroup]="projectForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" type="text" maxlength="50" required>
+                <mat-error *ngIf="projectForm.get('name')?.hasError('required')">
+                    Name is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description" maxlength="200" rows="4" type="text" required>
+                </textarea>
+                <mat-error *ngIf="projectForm.get('description')?.hasError('required')">
+                    Description is required
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+    <div *ngIf="data.isDelete">
+        Are you sure, do you want the Project?
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="left">
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-button (click)="data?.isDelete ? onsubmit() : onSubmit()" cdkFocusInitial>Submit</button>
+    </div>
+</mat-dialog-actions>

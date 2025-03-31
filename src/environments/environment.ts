@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  signupUrl: 'http://localhost:8080/api/users/signup',
+  loginUrl: 'http://localhost:8080/api/users/login',
+  getProjectUrl: 'http://localhost:8080/api/project/getProject',
+  addProjectUrl: 'http://localhost:8080/api/project/add',
+  updateProjectUrl: 'http://localhost:8080/api/project/update',
+  deleteProjectUrl: 'http://localhost:8080/api/project/delete'
 };
 
 /*
@@ -14,3 +21,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+

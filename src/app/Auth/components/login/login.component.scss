@@ -1,0 +1,54 @@
+.login-home {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  // background-color: grey;
+
+  .successMsg {
+    background-color: rgba(12, 182, 12, 0.849);
+    border-radius: 4px;
+  }
+
+  .errorMsg {
+    background-color: rgb(235, 18, 65);
+    border-radius: 4px;
+  }
+  .mat-card {
+    width: 90%;
+    padding: 0px;
+
+    .bg-blue {
+      background-color: #3f51b5;
+    }
+    .bk-line {
+      border-bottom: 1px solid #000;
+    }
+    .mat-card-header {
+      padding-top: 8px;
+      color: white;
+      .mat-card-title {
+        font-size: 1.1rem !important;
+      }
+    }
+    .mat-card-content {
+      padding: 16px;
+    }
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+
+    .mat-form-field {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    .btn-link {
+      text-decoration: none;
+      color: #495ed18c;
+    }
+  }
+}
