@@ -6,13 +6,13 @@
                     <div class="fs-6 fw-bold">
                         Project List
                     </div>
-                    <div>
+                    <div *ngIf="userData?.group_id == 2">
                         <button mat-raised-button color="primary" (click)="addProjectList()">
                             Add Project
                         </button>
                     </div>
                 </div>
-                <div class="table-list">
+                <div class="table-list" *ngIf="projectList.lenght > 0">
                     <table mat-table [dataSource]="dataSource">
                         <ng-container matColumnDef="name">
                             <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -44,6 +44,9 @@
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
+                </div>
+                <div *ngIf="projectList.length == 0">
+                    No project data found
                 </div>
             </mat-card-content>
         </mat-card>

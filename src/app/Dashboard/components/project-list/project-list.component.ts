@@ -51,6 +51,7 @@ export class ProjectListComponent implements OnInit {
           name: result.name,
           description: result.description
         }
+        this.dashboardService.emit('notify', { text: 'added' });
         this.dashboardService.addProjectList(payload).subscribe(res => {
           this.loading = false;
           if (res) {
